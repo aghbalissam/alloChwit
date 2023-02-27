@@ -1,0 +1,36 @@
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+.allochwit-header
+{
+    height: 4.5rem !important;
+
+    .col.header-part1
+    {
+        img
+        {
+            height: 4rem;
+        }
+    }
+
+    .col.header-part2
+    {
+        #search-header
+        {
+            border-radius: 30px;
+        } 
+    }
+
+    .col.header-part3
+    {
+        >div:not(.user-location)
+        {
+            height: 50px;
+            width: 50px;
+            background-color: $secondary-color;
+            border-radius: 100%;
+            position: relative;
+        }
+    }
+
+}

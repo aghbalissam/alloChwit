@@ -1,0 +1,152 @@
+<section id="allochwit-checkout">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-8">
+                <div>
+                    <!-- go Back() -->
+                    <div class="checkout-goback">
+                        <div class="pointer d-flex justify-content-center align-items-center"
+                             (click)="goBack()">
+                            <i class="fas fa-long-arrow-left"></i>
+                        </div>
+                    </div>
+                    <!-- Name of [ Res/Cof ] -->
+                    <div class="my-3">
+                        <h1>{{ resName }}</h1>
+                    </div>
+                    <!-- Cart Items -->
+                    <div class="checkout-cartItems">
+                        <table class="table align-middle">
+                            <tbody>
+                                <tr *ngFor="let prod of getCartItems()" 
+                                scope="row">
+                                    <td>
+                                        <div class="checkout-cartItems-image">
+                                            <img [src]="prod.image?prod.image:'/assets/Untitled design.png'" 
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span> {{ prod.name }} </span>
+                                    </td>
+                                    <td>
+                                        <span> {{ prod.price | currency }} </span>
+                                    </td>
+                                    <td>
+                                        <app-counter [product]="prod" 
+                                                    [clsName]="'checkoutStyle'"></app-counter>
+                                    </td>
+                                    <td>
+                                        <span>{{ prod.total | currency }}</span>
+                                    </td>
+                                    <td>
+                                        <i class="fa-regular fa-trash-can pointer" 
+                                            (click)="removeProduct(prod)">
+                                        </i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-sm-between">
+                            <div>
+                                Total
+                            </div>
+                            <div>
+                                <b> {{ totalC() | currency }} </b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Infos Générales  & paiment -->
+                    <div id="checkout-infos" class="my-4">
+                        <form action="">
+                            <div>
+                                <h3> Informations générales </h3>
+                                    <div class="mb-3">
+                                        <label for="inputPhone" class="form-label">Numéro de téléphone</label>
+                                        <input type="text" 
+                                            class="form-control" 
+                                            id="inputPhone" aria-describedby="emailHelp">
+                                    </div>
+                                <!-- <h3> Moyen de paiement </h3>
+                                <div class="payment-methods">
+                                    <div class="pointer" (click)="cardDetails=true">
+                                        <input type="radio" class="btn-check" name="creditcard" 
+                                                id="credit-card" autocomplete="off" checked>
+                                        <label class="p-2 btn d-block" for="Credit Card">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/147/147258.png" 
+                                                alt="Credit Card">
+                                            <span> Credit Card </span>
+                                        </label>
+                                    </div>  
+                                    <div class="pointer" (click)="cardDetails=false">
+                                        <input type="radio" class="btn-check" name="cashondelivery"
+                                                id="cash-on-delivery" autocomplete="off" checked>
+                                        <label class="p-2 btn d-block" for="cash-on-delivery">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/6491/6491623.png" 
+                                                alt="Cash on delivery">
+                                            <span> Cash on delivery </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div *ngIf="cardDetails">
+                                    <div class="mb-3">
+                                        <label for="nomCarte" class="form-label"> Nom du titulaire de la carte </label>
+                                        <input type="text" class="form-control" id="nomCarte">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="numeroCarte " class="form-label"> Numéro de la carte </label>
+                                        <input type="text" class="form-control" id="numeroCarte">
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-auto">
+                                            <label for="mmaa" class="form-label"> MM/AA </label>
+                                            <input type="text" class="form-control" id="mmaa">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="cryptogramme" class="form-label"> Cryptogramme </label>
+                                            <input type="text" class="form-control" id="cryptogramme">
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <!-- Component -->
+                <div class="checkout-total p-3">
+                    <div class="d-flex align-items-center">
+                        <img src="../../../assets/burger.png" alt="">
+                        <h4> {{ resName }} </h4>
+                        <!-- Calculate Total amoutn with shipping price -->
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">SubTotal</th>
+                                    <td>{{ totalC() | currency }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Shipping</th>
+                                    <td>{{ shipping }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td>{{ totalCheckout() | currency }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <button class="btn btn-success" (click)="validateOrder()">
+                            Valider
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

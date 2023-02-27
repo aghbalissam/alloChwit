@@ -1,0 +1,80 @@
+.map-frame {
+  height: 100%;
+}
+
+#map,
+#map2 {
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/1_Ol1yI34dT49wiZzpWluPjQ.png");
+  background-size: cover;
+}
+
+#address-modal .address-modal-container {
+  background-color: white;
+  border-radius: 10px;
+  /*#mapPin
+  {
+      #map
+      {
+          height: 350px;
+          width: 100%;
+          background-color: #dedede;
+
+      }
+  }*/
+}
+#address-modal .address-modal-container img {
+  width: auto;
+  height: 350px;
+}
+#address-modal .address-modal-container .circle {
+  height: 35px;
+  width: 35px;
+  background-color: rgba(235, 176, 59, 0.5);
+  color: #192C4D;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#address-modal .address-modal-container #searchBox {
+  position: relative;
+}
+#address-modal .address-modal-container #searchBox form div {
+  border: 1px solid #dedede;
+  border-radius: 5px;
+}
+#address-modal .address-modal-container #searchBox form div input {
+  border: none;
+}
+#address-modal .address-modal-container #searchBox form div button[type=submit] {
+  background-color: rgba(235, 176, 59, 0.5);
+  color: #192C4D;
+}
+#address-modal .address-modal-container #searchBox #searchBoxList {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  z-index: 2;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#address-modal .address-modal-container #searchBox #searchBoxList ul li a {
+  color: #333;
+}
+#address-modal .address-modal-container #searchBox #searchBoxList ul li a:hover {
+  background-color: #e7e7e7;
+}
+#address-modal .address-modal-container #map,
+#address-modal .address-modal-container #map2 {
+  min-height: 300px;
+}
+
+.opacity-1 {
+  opacity: 1;
+}/*# sourceMappingURL=address-modal.component.css.map */

@@ -1,0 +1,27 @@
+// Vars
+
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+
+#error-page
+{
+    h3
+    {
+        font-size: 40px;
+    }
+
+    img
+    {
+        width: 80%
+    }
+}
+
+
+.link-style-1
+{
+    background-color: $secondary-color;
+    color: $primary-color;
+    border-radius: 30px;
+    text-decoration: none;
+}

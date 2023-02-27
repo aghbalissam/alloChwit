@@ -1,0 +1,239 @@
+// Vars
+
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+$recImage1Hei : 400px; 
+$recImage2Hei : 150px;
+
+// Functions
+
+@mixin SizeBox($hei,$wid)
+{
+    height: $hei;
+    width: $wid;
+} 
+
+@mixin shared1($rad, $overf, $back, $col: unset)
+{
+    border-radius: $rad;
+    overflow: $overf;
+    background-color: $back;
+    color: $col;
+}
+
+#home-part1
+{
+    height: calc(90vh - 4.5rem);
+    background-color: $primary-color;
+
+    >div 
+    {
+        h1
+        {
+            color: white;
+            font-size: 60px;
+            span
+            {
+                color: $secondary-color;
+            }
+        }
+
+        .search-adress
+        {
+            @include shared1(10px, unset,white );
+            padding: 20px;   
+            .search-adress-box
+            {
+                border: 1px solid $secondary-color;
+                border-radius: 5px;
+            } 
+        }
+    }
+}
+
+#home-part2
+{
+    padding-bottom: 60px;
+    .col
+    {
+        @include shared1(10px, unset, white);
+        padding: 25px 15px;
+        margin-top: -3%;
+        box-shadow: 0px 2px 24px 6px rgba(0,0,0,.06);
+        .circle-icon
+        {
+            @include SizeBox(70px, 70px);
+            @include shared1(100%, unset, $secondary-color);
+            margin-right: 10px;
+            img
+            {
+                @include SizeBox(40px, 40px);
+            }
+        }
+        
+    }
+}
+
+
+#home-part3
+{
+    padding: 30px;
+
+    .home-part3-title
+    {
+        margin-bottom: 30px;
+        h2
+        {
+            font-size: 40px;
+        }
+    }    
+
+    .home-part3-list
+    {        
+        div
+        {
+            padding: 10px 20px;
+            @include shared1(30px, hidden, $secondary-color, $primary-color);
+            margin: 0px 4px;
+            font-size: 20px;
+        }
+    }
+}
+
+
+#home-part4
+{
+    .recommandations-container
+    {
+        .recommandations-container-part1
+        {
+            >div
+            {
+                @include shared1(10px, hidden, #f7f7f7);
+                .recommendations-image1
+                {
+                    height: $recImage1Hei;
+                } 
+            }
+        }
+        
+        .recommandations-list
+        {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            >div
+            {
+                @include shared1(10px, hidden, #f7f7f7);
+                .recommendations-image2
+                {   
+                    height: $recImage2Hei;
+                }
+            }
+        }
+
+        p 
+        {
+            margin-bottom: 7px;
+        }
+
+        i
+        {
+            color: $secondary-color;
+        }
+
+        img
+        {
+            @include SizeBox(100%, 100%);
+        }
+
+        .circle-icon
+        {
+            @include SizeBox(35px, 35px);
+            @include shared1(100%, unset, $secondary-color);
+            margin-right: 10px;
+            i
+            {
+                color: $primary-color;
+            }
+        }
+
+    }
+}
+
+#home-part5
+{
+    @include shared1(unset, unset, $primary-color, white);
+    .col
+    {
+        padding: 0px;
+        &:nth-child(1)
+        {
+            padding-left: 30px;
+            img
+            {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2)
+        {
+            padding-left: 30px;
+        }
+    }
+}
+
+
+#home-part6
+{
+    padding: 60px 0px;
+
+    h2
+    {
+        margin-bottom: 30px;
+        font-size: 40px;
+    }
+
+    .home-opportunities
+    {
+        display: flex;
+        .opportunity-image
+        {
+            @include SizeBox(200px, 200px);
+            border: 3px solid #EBB03B;
+            margin: auto;
+            margin-bottom: 10px;
+            @include shared1(100%, hidden, unset);
+            img
+            {
+                @include SizeBox(100%, 100%);
+                object-fit: cover;
+            }
+        }
+     
+        h6
+        {
+            font-size: 25px;
+        }
+     
+        a
+        {
+            text-decoration: none;  
+            @include shared1(5px,unset , $secondary-color, #000);   
+        }
+    }
+}
+
+
+// share this class
+.color-EBB03B
+{
+    color: $secondary-color;
+}
+
+.link-style-1
+{
+    @include shared1(30px, unset, $secondary-color,$primary-color);
+}
+
+
+

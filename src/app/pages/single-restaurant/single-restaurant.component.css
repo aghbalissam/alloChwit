@@ -1,0 +1,66 @@
+.menus-list .menus-list-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.menus-list .menus-list-items .menus-list-items-single {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.menus-list .menus-list-items .menus-list-items-single:hover {
+  /* transform: scale(1.02); Error */
+  box-shadow: 0px 2px 24px 6px rgba(0, 0, 0, 0.05);
+}
+.menus-list .menus-list-items .menus-list-items-single .price {
+  color: #333;
+}
+.menus-list .menus-list-items .menus-list-items-single .circle-icon {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  background-color: rgba(235, 176, 59, 0.3);
+}
+.menus-list .menus-list-items .menus-list-items-single .circle-icon i {
+  font-size: 16px;
+  color: #EBB03B;
+}
+
+#single-element .single-element-part1 {
+  box-shadow: 0px 2px 24px 6px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+#single-element div #search-input {
+  border-radius: 30px;
+  height: 50px;
+}
+#single-element .single-menuslistFilter h5 i {
+  cursor: pointer;
+  font-size: 16px;
+}
+#single-element .single-menuslistFilter .listMenu {
+  border-top: 1px solid #dedede;
+  background: #f7f7f7;
+}
+#single-element .single-menuslistFilter .listMenu li {
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#single-element .single-menuslistFilter .listMenu li:hover {
+  background-color: #eeeeee;
+}
+#single-element .single-element-cart {
+  box-shadow: 0px 2px 24px 6px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  z-index: 999;
+}
+
+.index-999 {
+  z-index: 999;
+}
+
+.search-value mark {
+  background-color: #EBB03B;
+  color: #192C4D;
+}/*# sourceMappingURL=single-restaurant.component.css.map */

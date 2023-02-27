@@ -1,0 +1,109 @@
+<section id="user-account" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="user-account-menu">
+                    <ul class="px-0">
+                        <li (click)="showComp('profile')">
+                            Mon Profil
+                        </li>
+                        <li (click)="showComp('password')">
+                            Mot de passe
+                        </li>
+                        <li>
+                            Supprimer mon compte
+                        </li>
+                        <li (click)="logOut()">
+                            Déconnexion
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9">
+                <!-- Component -->
+                <div *ngIf="compProf">
+                    <div class="user-infos-part1 d-flex align-items-center mb-5">
+                        <div class="usip1-icon d-flex justify-content-center align-items-center">
+                            <span>
+                                {{ userInfos.name[0] }}
+                            </span>    
+                        </div>
+                        <div class="mx-3">
+                            <span class="usip1-name d-block"> {{ userInfos.name }} </span>
+                            <span class="usip1-email d-block"> {{ userInfos.email }} </span>
+                        </div>
+                    </div>
+                    <div class="user-infos-part2 pr-5">
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="user-name" class="form-label">Nom</label>
+                                <input type="text" 
+                                        class="form-control" 
+                                        id="user-name" 
+                                        [value]="userInfos.name">
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="user-email" class="form-label">E-mail</label>
+                                <input type="email" 
+                                        class="form-control" 
+                                        id="user-email" 
+                                        [value]="userInfos.email">
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="user-phone" class="form-label">Téléphone</label>
+                                <input type="text" 
+                                        class="form-control" 
+                                        id="user-phone" 
+                                        [value]="userInfos.phone">
+                            </div>
+    
+                            <div class="mb-3">
+                                <button type="submit" 
+                                    class="btn btn-style">Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Component -->
+                <!-- remove the old password -->
+                <!-- changePswTy() it's commun for all input -->
+                <div *ngIf="compPass">
+                    <form>
+                        <div class="mb-3 password-container">
+                            <label for="user-password" class="form-label">Ancien mot de passe</label>
+                            <div class="d-flex align-items-center">
+                                <input type="password" 
+                                class="form-control" 
+                                id="user-password" 
+                                [type]="passwordType">
+                                <div class="show-password" (click)="changePswTy()">
+                                    <i [class]="classEye"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 password-container">
+                            <label for="user-password" class="form-label">Nouveau mot de passe</label>
+                            <div class="d-flex align-items-center">
+                                <input type="password" 
+                                class="form-control" 
+                                id="user-password" 
+                                [type]="passwordType">
+                                <div class="show-password" (click)="changePswTy()">
+                                    <i [class]="classEye"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" 
+                                class="btn btn-style">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

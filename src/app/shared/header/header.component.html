@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white allochwit-header">
+  <div class="container">
+      <!-- part 1 -->
+      <div class="col header-part1">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/logo2.jpeg" alt="alloChwit">    
+          </a>
+      </div>
+      <!-- part 2 -->
+      <div class="col header-part2">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <input class="form-control me-2" 
+                    type="search" 
+                    #searchTerm
+                    (keyup.enter)="searchValue(searchTerm.value)"
+                    placeholder="Recherche" 
+                    id="search-header"
+                    aria-label="Recherche">
+          </div>
+      </div>
+      <!-- part 3 -->
+      <div class="col header-part3 d-flex justify-content-end align-items-center">
+          <div *ngIf="cityAdress" 
+              (click)="getAdressModal()" 
+              class="user-location d-flex align-items-center justify-content-center pointer">
+            <span> {{globalSrv.getAddressValue()}} </span>
+            <mat-icon class="color-EBB03B">location_on</mat-icon>
+          </div>
+          <div class="header-part3-user mx-1 d-flex justify-content-center align-items-center pointer" 
+              (click)="authPopUp()">
+              <i class="fa-solid fa-user"></i>
+          </div>
+          <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <app-cart-modal></app-cart-modal>
+            fallazk
+          </mat-menu>
+          <!--mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Mon Profil</button>
+            <button mat-menu-item >Deconnexion</button>
+          </mat-menu-->
+          <div class="header-part3-menu mx-1 d-flex justify-content-center align-items-center pointer">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+      </div>
+  </div>
+</nav>

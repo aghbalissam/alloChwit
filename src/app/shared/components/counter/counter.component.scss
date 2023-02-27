@@ -1,0 +1,28 @@
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+@mixin sizeBox($hei, $wid, $radius: none,$back)
+{
+    height: $hei;
+    width: $wid;
+    border-radius: $radius;
+    padding: 0px !important;
+    background-color: $back;
+}
+
+.cartStyle
+{
+    button
+    {
+        @include sizeBox(30px, 30px, 100%,transparent);
+        border: 1px solid #eee;
+    } 
+}   
+
+.checkoutStyle
+{
+    button
+    {
+        @include sizeBox(25px,25px, 100%, rgba($secondary-color, .3));
+    }
+}

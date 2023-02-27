@@ -1,0 +1,19 @@
+.productWithout .container-image {
+  height: 300px;
+  width: 300px;
+  background: #f7f7f7;
+}
+.productWithout .container-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.quantity-operations .btn {
+  background-color: rgba(235, 176, 59, 0.3);
+}
+
+.btn-style {
+  background-color: #EBB03B;
+  color: #192C4D;
+  border-radius: 30px;
+}/*# sourceMappingURL=product-shared-box.component.css.map */

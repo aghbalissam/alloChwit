@@ -1,0 +1,224 @@
+<!-- section 1 -->
+<section id="home-part1" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row ">
+          <div class="col">
+            <h1>
+                <span class="d-block">Express</span>
+                Livraison à domicile
+            </h1>
+            <div class="search-adress text-center">
+                <p> Choisir une adresse de livraison </p>
+                <div class="search-adress-box py-2" (click)="getAdressModal()">
+                    <i class="fa-light fa-flag-swallowtail"></i>
+                    <span>Quelle est votre adresse ?</span>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <!-- <img src="../../../assets/overjoyed-guy-with-helmet-driving-yellow-scooter-removebg-preview.png" alt="" srcset=""> -->
+          </div>
+        </div>
+    </div>
+</section>
+
+<!-- Address Modal -->
+<!--app-address-modal *ngIf="addressActive"></app-address-modal-->
+
+<!-- section 2 -->
+<section id="home-part2">
+    <div class="container">
+        <div class="row">
+            <div class="col mx-1">
+                <div class="d-flex align-items-center">
+                    <div class="circle-icon d-flex align-items-center justify-content-center">
+                        <img src="../../../assets/hamburger.png" alt="">
+                    </div>
+                    <div>
+                        <h4>Fastfood</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col mx-1">
+                <div class="d-flex align-items-center">
+                    <div class="circle-icon d-flex align-items-center justify-content-center">
+                        <img src="../../../assets/pizza2.png" alt="">
+                    </div>
+                    <div>
+                        <h4> Hot Pizza </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col mx-1">
+                <div class="d-flex align-items-center">
+                    <div class="circle-icon d-flex align-items-center justify-content-center">
+                        <img src="../../../assets/sushi.png" alt="">
+                    </div>
+                    <div>
+                        <h4> Asian Food </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col mx-1">
+                <div class="d-flex align-items-center">
+                    <div class="circle-icon d-flex align-items-center justify-content-center">
+                        <img src="../../../assets/meat.png" alt="">
+                    </div>
+                    <div>
+                        <h4> Orientale </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- section 3 -->
+
+<section id="home-part3">
+    <div class="home-part3-title">
+        <h2 class="color-EBB03B text-center">
+            Meilleures Catégories en Guyane 
+        </h2>
+    </div>
+    <!-- convert to links -->
+    <div class="home-part3-list d-flex justify-content-center">
+        <div *ngFor="let category of meilleuresCat"> {{ category }} </div>
+    </div>
+</section>
+
+<!-- section 4 -->
+
+<section id="home-part4" class="py-5">
+    <div class="home-part4-title text-center">
+        <h3>
+            Nos recommandations
+        </h3>
+        <h2 class="color-EBB03B">
+            Cafés & Restaurants
+        </h2>
+    </div>
+    <div class="container recommandations-container">
+        <div class="row">
+            <div class="col-6 recommandations-container-part1">
+                <div>
+                    <div class="recommendations-image1">
+                        <img [src]="rests[0].image" alt="">
+                    </div>
+                    <div class="p-3">
+                        <div>
+                            <h3 class="mb-3">{{ rests[0].name }}</h3>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <p> <i class="fa-solid fa-calendar-days"></i> {{ rests[0].days }}</p>
+                                <p> <i class="fa-solid fa-clock"></i> {{ rests[0].hours }}</p>        
+                            </div>
+                            <div>
+                                <div class="circle-icon pointer d-flex justify-content-center align-items-center"
+                                (click)="goto(rests[0].city,rests[0].slogan)"
+                                >
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 recommandations-container-part2">
+                <div class="d-grid recommandations-list flex-wrap">
+                    <div *ngFor="let rest of rests | slice:1:5; let i = index;" >
+                        <div class="recommendations-image2">
+                            <img [src]="rest.image" alt="">
+                        </div>
+                        <div class="p-3">
+                            <div>
+                                <h3 class="mb-3">{{ rest.name }}</h3>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between pointer">
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> {{ rest.days }} </p>
+                                    <p><i class="fa-solid fa-clock"></i> {{ rest.hours }} </p>
+                                </div>
+                                <div>
+                                    <div class="circle-icon d-flex align-items-center justify-content-center pointer"
+                                        (click)="goto(rest.city,rest.slogan)"
+                                    >
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+        <div class="text-center my-2">
+            <a href="#" class="link-style-1 px-4 py-2 d-inline-block" >Voir Plus</a>
+        </div>
+</section>
+
+<!-- section 5 -->
+
+<section  id="home-part5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0">
+                <img src="https://images.pexels.com/photos/6169002/pexels-photo-6169002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            </div>
+            <div class="col d-flex flex-column justify-content-center pl-4">
+                <h2>Asseyez-vous à la maison</h2>
+                <h2 class="color-EBB03B">Nous prendrons soin</h2> <!-- Add Pipe Color -->
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quidem soluta adipisci quam necessitatibus doloremque, totam assumenda aut ab, voluptates laudantium error nisi tenetur, quaerat nulla amet sit dignissimos autem!
+                </p>    
+                <div class="d-flex">
+                    <div class="py-1 text-center mr-2">
+                        <img src="../../../assets/fast-delivery (1).png" 
+                            alt="Livraison rapide">
+                        <p>Livraison rapide</p>   
+                    </div>
+                    <div class="p-1 text-center mx-2">
+                        <img src="../../../assets/location.png" 
+                            alt="Large Carte de couverture">
+                        <p>Large Carte de couverture</p>
+                    </div>
+                    <div class="p-1 text-center mx-2">
+                        <img src="../../../assets/delivery-man.png" 
+                            alt="Plus que 150 coursiers">
+                        <p>Plus que 150 coursiers</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="link-style-1 px-4 py-2 d-inline-block" >
+                        Voir Plus
+                    </a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- section 6 -->
+
+<section id="home-part6">
+    <h2 class="color-EBB03B text-center"> 
+        Opportunités
+    </h2>
+    <div class="container px-5">
+        <div class="home-opportunities">
+            <div class="text-center opportunity-box" *ngFor="let opor of Opportunites">
+                <div class="opportunity-image">
+                    <img [src]="opor.image" [alt]="opor.title">
+                </div>
+                <h3> {{ opor.title }} </h3>
+                <p class="px-4"> {{ opor.shortDescription }} </p>   
+                <a [routerLink]="['/opor.link']" routerLinkActive="router-link-active" class="p-3 d-inline-block mt-2"> Rejoignez-nous </a> 
+            </div>
+        </div>
+    </div>
+</section>

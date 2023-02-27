@@ -1,0 +1,128 @@
+<app-breadcrumb [title]="currentRestaurant.name"></app-breadcrumb>
+<section id="single-element">
+    <div class="container-fluid px-4 py-5">
+        <div class="row">
+            <div class="col-9">
+                <div class="single-element-part1 p-3">
+                    <app-breadcrumb-single 
+                        [currentRest]="currentRestaurant">
+                    </app-breadcrumb-single>
+                </div>
+                <div class="container p-3">
+                    <div class="row my-4">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <div action="" id="search-single">
+                                <input type="text" 
+                                [placeholder]="'Recherche dans ' + currentRestaurant.name" 
+                                class="form-control" 
+                                id="search-input"
+                                #searchInSingle
+                                [value]="searchV"
+                                (keyup)="searchInBox(searchInSingle)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Use Filter -->
+                        <div class="col-3">
+                            <div class="single-menuslistFilter">
+                                <h5 class="d-flex align-items-center justify-content-lg-between"> Menu 
+                                    <i class="fa-solid fa-chevron-down" 
+                                    (click)="showMenu=!showMenu"></i>
+                                </h5>
+                                <div class="listMenu"  *ngIf="showMenu">
+                                    <ul class="p-0 list-style-none">
+                                        <li *ngFor="let item of menuslistFilter" 
+                                            class="p-3"
+                                            (click)="generateLinkSame(item)">
+                                            {{ item }}
+                                        </li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9" *ngIf="!searchEvent">
+                            <app-product [count]="12" *ngIf="loading"></app-product>
+                            <div *ngIf="!loading">
+                                <div *ngIf="menus.length == 0">
+                                    Aucun Element
+                                </div>
+                                <!-- generate with function -->
+                                <div *ngIf="menus.length > 0">
+                                    <div *ngFor="let item of menus" class="menus-list mb-5">
+                                        <div class="menus-list-title" id="{{ item.title }}" >
+                                            <h3> {{ item.title }} </h3>
+                                        </div>
+                                        <div class="menus-list-items">
+                                            <div *ngFor="let singleMenu of item.list" 
+                                                class="pointer" 
+                                                (click)="updateSelectedProd(singleMenu)">
+                                                <!-- Component -->
+                                                <app-boxproduct [singleMenu]="singleMenu"></app-boxproduct>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <div class="col-9" *ngIf="searchEvent">
+                            <!-- Use component -->
+                            <!-- search results -->
+                            <div class="menus-list">
+                                <div class="menus-list-title">
+                                    <h3>
+                                        Recherche
+                                    </h3>
+                                </div>
+                                <div *ngIf="searchList.length > 0">
+                                    <div class="menus-list-items">
+                                        <div *ngFor="let s of searchList" 
+                                            class="p-3 menus-list-items-single pointer" 
+                                            (click)="updateSelectedProd(s)">
+                                            <h5 class="search-value">
+                                                <ng-container *ngFor="let item of targetKey(s!.name)">
+                                                    <mark *ngIf="item.type == 'mark'" [innerHTML]="item.value"></mark> 
+                                                    <span *ngIf="item.type == 'span'" [innerHTML]="item.value"></span>
+                                                </ng-container>
+                                                <!-- old method -->
+                                                <!-- <span class="d-inline-block" [innerHTML]="targetKey(s!.name)[0]"></span>
+                                                <mark [innerHTML]="searchValue"></mark> 
+                                                <span class="d-inline-block" [innerHTML]="targetKey(s!.name)[1]"></span> -->
+                                            </h5>
+                                            <p>
+                                                <!-- not working if description is empty -->
+                                                <!--ng-container *ngFor="let item of targetKey(s!.description)">
+                                                    <mark *ngIf="item.type == 'mark'"[innerHTML]="item.value"></mark> 
+                                                    <span *ngIf="item.type == 'span'"[innerHTML]="item.value"></span>
+                                                </ng-container-->
+                                           </p><!-- change the color -->
+                                            <div class="d-flex align-items-center justify-content-lg-between">
+                                                <span class="price"> {{ s!.price | currency}} </span>
+                                                <div class="circle-icon d-flex justify-content-center align-items-center">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="searchList.length == 0">
+                                    <p>
+                                        Aucun Element
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 sticky-top d-inline-block index-999">
+                <div class="single-element-cart p-3 sticky-top">
+                    <!-- Component -->
+                    <app-cart-modal [idRes]="currentRestaurant._id"></app-cart-modal>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

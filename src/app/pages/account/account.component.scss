@@ -1,0 +1,72 @@
+// Vars
+
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+#user-account
+{
+    .user-account-menu
+    {
+        border-right: 1px solid #dedede;
+        ul
+        {
+            list-style: none;
+            li
+            {
+                padding: 10px 0px;
+                &:hover
+                {
+                    cursor: pointer;
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+
+    .user-infos-part1
+    {
+        .usip1-icon
+        {
+            height: 80px;
+            width: 80px;
+            background-color: $primary-color;
+            color: $secondary-color;
+            border-radius: 100%;
+            overflow: hidden;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .usip1-name
+        {
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        .usip1-email
+        {
+            font-weight: normal;
+        }
+    }
+
+    .user-infos-part2
+    {
+        .password-container
+        {
+            >div
+            {
+                .show-password
+                {
+                    cursor: pointer;
+                    padding: 0px 10px;
+                }
+            }
+        }
+    }
+}
+
+.btn-style
+{
+    background-color: $secondary-color;
+    color: $primary-color;
+}

@@ -1,0 +1,12 @@
+.productWith {
+  height: 65vh;
+  overflow-y: scroll;
+}
+.productWith button {
+  border: 1px solid #dedede;
+  width: 100%;
+  text-align: left;
+}
+.productWith button span {
+  float: right;
+}/*# sourceMappingURL=product-one-box.component.css.map */

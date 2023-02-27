@@ -1,0 +1,19 @@
+// Vars
+
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+#breadcrumb
+{
+    background-color: $primary-color;
+    color: $secondary-color;
+    .breadcrumb-container
+    {
+        height: 250px;
+        width: 100%;
+        h2
+        {
+            font-size: 45px;
+        }
+    }
+}

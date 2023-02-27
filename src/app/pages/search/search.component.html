@@ -1,0 +1,29 @@
+<div class="container my-5">
+    <h3 class="mb-3"> Résultats De Recherche Pour: {{searchTerm}} </h3>
+    <div class="row mb-5" *ngIf="partners.length > 0">
+        <!-- Use Skeleton -->
+        <h3> Restaurants & Cafés </h3>
+        <!-- Partners -->
+        <div class="col-md-3 col-sm-4" *ngFor="let p of partners">
+            <a [routerLink]="'/' + city + '/restaurants/' + p.slogan" class="text-decoration-none">
+                <app-boxres [restaurant]="p"></app-boxres>
+            </a>
+        </div>
+    </div>
+    <div class="row menus-search-results" *ngIf="menus.length > 0">
+        <!-- Use Skeleton -->
+        <h3> Menus </h3>
+        <!-- Menus -->
+        <div class="col-md-3 col-sm-4 pointer mb-2" *ngFor="let p of menus">
+            <!-- Component -->
+            <a [routerLink]="'/' + city + '/restaurants/' + p.slogan " class="text-decoration-none" [queryParams]="{s:p.name}">
+                <app-boxproduct [singleMenu]="p"></app-boxproduct>
+            </a>
+        </div>
+    </div>
+    <div *ngIf="partners.length <= 0 && menus.length <= 0">
+        <p>
+            Désolé, mais rien ne correspond à vos termes de recherche. veuillez réessayer avec d'autres mots-clés.
+        </p>
+    </div>
+</div>

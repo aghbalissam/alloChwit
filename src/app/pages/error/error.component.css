@@ -1,0 +1,13 @@
+#error-page h3 {
+  font-size: 40px;
+}
+#error-page img {
+  width: 80%;
+}
+
+.link-style-1 {
+  background-color: #EBB03B;
+  color: #192C4D;
+  border-radius: 30px;
+  text-decoration: none;
+}/*# sourceMappingURL=error.component.css.map */

@@ -1,0 +1,46 @@
+#user-auth > div {
+  background-color: white;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#user-auth > div .user-auth-part1 {
+  height: 100px;
+  position: relative;
+}
+#user-auth > div .user-auth-part1 .close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+#user-auth > div #user-up, #user-auth > div #user-in {
+  padding: 40px 80px;
+}
+#user-auth > div #user-up form > div img, #user-auth > div #user-in form > div img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#user-auth > div #user-up form > div input, #user-auth > div #user-in form > div input {
+  width: 350px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  border-radius: 0px;
+  display: inline-block;
+}
+#user-auth > div #user-up button[type=submit], #user-auth > div #user-in button[type=submit] {
+  background-color: #EBB03B;
+  color: #192C4D;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 20px;
+}
+#user-auth > div #user-up button.btn-show, #user-auth > div #user-in button.btn-show {
+  color: #EBB03B;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+}/*# sourceMappingURL=user-auth.component.css.map */

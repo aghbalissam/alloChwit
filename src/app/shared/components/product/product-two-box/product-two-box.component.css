@@ -1,0 +1,15 @@
+.productWith {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.productWith::-webkit-scrollbar {
+  width: 8px;
+}
+.productWith::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.productWith::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}/*# sourceMappingURL=product-two-box.component.css.map */

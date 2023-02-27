@@ -1,0 +1,32 @@
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+.productWithout
+{
+    .container-image
+    {
+        height: 300px;
+        width: 300px;
+        background: #f7f7f7;
+        img
+        {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.quantity-operations
+{   
+    .btn
+    {
+        background-color: rgba($secondary-color, .3);
+    }
+}
+
+.btn-style
+{
+    background-color: $secondary-color;
+    color: $primary-color;
+    border-radius: 30px;
+}

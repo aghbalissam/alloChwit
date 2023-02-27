@@ -1,0 +1,16 @@
+.cartStyle button {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  padding: 0px !important;
+  background-color: transparent;
+  border: 1px solid #eee;
+}
+
+.checkoutStyle button {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  padding: 0px !important;
+  background-color: rgba(235, 176, 59, 0.3);
+}/*# sourceMappingURL=counter.component.css.map */

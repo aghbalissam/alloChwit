@@ -1,0 +1,84 @@
+<section id="address-modal"> 
+    <div class="container address-modal-container p-3">
+        <div class="row mb-4">
+            <div class="col" *ngIf="mapPin">
+                <i class="fa-solid fa-arrow-left pointer" (click)="mapPin = false; location = true"></i>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button mat-icon-button mat-dialog-close>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="row text-center mb-4">
+            <div class="col">
+                <h3> Ajouter une adresse de livraison </h3>
+            </div>
+        </div>
+        <div class="row p-3" *ngIf="location">
+            <div class="col-6">
+                <div class="mb-3" id="searchBox">
+                    <div class="d-flex"> 
+                        <input type="text" 
+                                #searchVal
+                                (keyup)="searchAdress(searchVal.value)"
+                                placeholder="rechercher" 
+                                class="form-control">
+                        <button type="submit" class="btn"> 
+                            <i class="fa-solid fa-magnifying-glass"></i> 
+                        </button>    
+                    </div>
+                    <div *ngIf="searchBox" class="mt-1" id="searchBoxList">
+                        <ul class="m-0">
+                            <li *ngFor="let item of listEmpty">
+                                <a (click)="goTo(item)" 
+                                    class="d-block p-1 pointer">
+                                    {{ item }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-inline-flex align-items-center mb-3 gap-2 pointer" 
+                    (click)="getCurrentPos()">
+                    <div class="circle">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span>
+                        {{ searchAdr }}
+                        Utiliser votre localisation
+                    </span>
+                </div>
+                <div class="d-inline-flex align-items-center mb-3 gap-2 pointer" 
+                    (click)="mapPin = true; location = false">
+                    <div class="circle">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <span>
+                        Selectionner votre position dans la carte 
+                    </span>
+                    <span *ngIf="currentLocation.lat && currentLocation.long">
+                        {{ currentLocation.lat }}
+                        {{ currentLocation.long }}
+                    </span>
+                </div>
+            </div>
+            <div class="col-6 overflow-hidden">
+                <div class="map-container">
+                    <div class="map-frame">
+                      <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-3" *ngIf="mapPin" id="mapPin">
+            <div class="col-12">
+                <div class="map-container">
+                    <div class="map-frame">
+                      <div id="map2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

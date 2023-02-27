@@ -1,0 +1,24 @@
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hello {
+  background-color: red;
+}/*# sourceMappingURL=shared.css.map */

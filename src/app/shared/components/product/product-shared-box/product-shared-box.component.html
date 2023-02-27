@@ -1,0 +1,25 @@
+<div class="productWithout">  
+    <div class="container-image">
+        <img [src]="(product.p.image)?product.p.image:'../../../../../../../assets/Untitled design.png'" alt="">
+    </div>
+    <div>
+        <h2 class="my-2"> {{ product.p.name }} </h2>
+        <span class="my-2"> {{ product.p.price | currency }} </span>
+    </div>
+    <!-- convert to component -->
+    <div class="quantity-operations d-flex align-items-center my-2">
+        <button class="btn" (click)="decreaseQuantity()" 
+                [disabled]="product.p.quantity == 1"> 
+            - 
+        </button>
+        <div class="mx-3">{{ product.p.quantity }}</div>
+        <button class="btn" (click)="increaseQuantity()"> 
+            + 
+        </button>
+    </div>
+    <!-- end -->
+    <button class="btn btn-style my-2" 
+            (click)="addToCart()">
+            Ajouter {{ product.p.quantity }} pour {{ product.p.total | currency }} 
+    </button>
+</div>

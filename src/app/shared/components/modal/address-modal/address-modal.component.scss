@@ -1,0 +1,122 @@
+// Vars
+
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+  
+.map-frame 
+{
+    height: 100%;
+}
+
+#map,
+#map2
+{
+    height: 100%;
+    width: 100%;
+    background-image: url('/assets/1_Ol1yI34dT49wiZzpWluPjQ.png');
+    background-size: cover;
+}
+
+#address-modal
+{
+    .address-modal-container
+    {
+        background-color: white;
+        border-radius: 10px;
+
+        img
+        {
+            width: auto;
+            height: 350px;
+        }
+
+        .circle
+        {
+            height: 35px;
+            width: 35px;
+            background-color: rgba($secondary-color, .5);
+            color: $primary-color;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #searchBox
+        {
+            position: relative;
+
+            form
+            {
+                div
+                {
+                    border: 1px solid #dedede;
+                    border-radius: 5px;
+                    input
+                    {
+                        border: none;
+                    }
+    
+                    button[type="submit"]
+                    {
+                        background-color: rgba($secondary-color, .5);
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            #searchBoxList
+            {
+                position: absolute;
+                left: 0px;
+                top: 100%;
+                width: 100%;
+                background-color: #eee;
+                border-radius: 3px;
+                border: 1px solid #dedede;
+                z-index: 2;
+                height: fit-content;
+                ul
+                { 
+                    li
+                    {
+                        a 
+                        {
+                            color: #333;
+                            &:hover
+                            {
+                                background-color: #e7e7e7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Duplicate
+
+        #map,
+        #map2 
+        {
+            min-height: 300px;
+        }
+
+        /*#mapPin
+        {
+            #map
+            {
+                height: 350px;
+                width: 100%;
+                background-color: #dedede;
+
+            }
+        }*/
+    }
+}
+
+
+// global
+.opacity-1
+{
+    opacity: 1;
+}

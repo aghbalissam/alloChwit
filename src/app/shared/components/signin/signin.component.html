@@ -1,0 +1,23 @@
+<form action="" class="text-center" (ngSubmit)="login(loginUser)" #loginUser="ngForm">
+    <div class="mb-3 d-flex">
+        <img src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/glyphs/letter.svg" alt="">
+        <input type="email" 
+                class="form-control" 
+                id="InputEmail1"  
+                name="userEmail"
+                [(ngModel)]="userEmail"
+                placeholder="E-mail">
+    </div>
+
+    <div class="mb-3 d-flex">
+        <img src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/glyphs/lock.svg" alt="">
+        <input type="password" 
+                class="form-control" 
+                id="InputPassword1" 
+                name="userPassword"
+                [(ngModel)]="userPassword"
+                placeholder="Mot de passe">
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Connexion </button>
+</form>

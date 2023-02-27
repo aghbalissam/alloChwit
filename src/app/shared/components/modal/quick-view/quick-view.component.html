@@ -1,0 +1,21 @@
+<div class="container p-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-end align-items-center">
+                <button mat-icon-button mat-dialog-close>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Component ( Without ) -->
+        <app-product-one-box [product]="product" *ngIf="!product.p.elementSup"></app-product-one-box>
+        <!-- Component ( With ) -->
+        <app-product-two-box [product]="product" *ngIf="product.p.elementSup"></app-product-two-box>
+    </div>
+</div>
+
+
+
+

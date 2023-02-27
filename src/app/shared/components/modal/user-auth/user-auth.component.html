@@ -1,0 +1,34 @@
+<section id="user-auth">
+    <div>
+        <div class="user-auth-part1 d-flex justify-content-center align-items-center"> 
+            <div class="close">
+                <button mat-icon-button mat-dialog-close>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <h3 class="text-center mt-4">
+                {{ operation }} à AlloChwit
+            </h3>
+        </div>
+        <div id="user-up" *ngIf="userUp">  
+            <!-- component -->
+            <app-signup></app-signup>
+            <div class="my-4 text-center">
+                Vous avez déjà un compte ? 
+                <button (click)="showBox('in')" class="btn-show">
+                    Connexion
+                </button>
+            </div>
+        </div>
+        <div id="user-in" *ngIf="userIn">
+            <!-- component -->
+            <app-signin></app-signin>
+            <div class="my-4 text-center">
+                Vous débutez sur AlloChwit ? 
+                <button (click)="showBox('up')" class="btn-show"> 
+                    Inscription 
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

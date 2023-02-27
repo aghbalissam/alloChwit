@@ -1,0 +1,11 @@
+#breadcrumb {
+  background-color: #192C4D;
+  color: #EBB03B;
+}
+#breadcrumb .breadcrumb-container {
+  height: 250px;
+  width: 100%;
+}
+#breadcrumb .breadcrumb-container h2 {
+  font-size: 45px;
+}/*# sourceMappingURL=breadcrumb.component.css.map */

@@ -1,0 +1,39 @@
+#user-account .user-account-menu {
+  border-right: 1px solid #dedede;
+}
+#user-account .user-account-menu ul {
+  list-style: none;
+}
+#user-account .user-account-menu ul li {
+  padding: 10px 0px;
+}
+#user-account .user-account-menu ul li:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+#user-account .user-infos-part1 .usip1-icon {
+  height: 80px;
+  width: 80px;
+  background-color: #192C4D;
+  color: #EBB03B;
+  border-radius: 100%;
+  overflow: hidden;
+  font-size: 40px;
+  font-weight: 500;
+}
+#user-account .user-infos-part1 .usip1-name {
+  font-weight: 600;
+  font-size: 22px;
+}
+#user-account .user-infos-part1 .usip1-email {
+  font-weight: normal;
+}
+#user-account .user-infos-part2 .password-container > div .show-password {
+  cursor: pointer;
+  padding: 0px 10px;
+}
+
+.btn-style {
+  background-color: #EBB03B;
+  color: #192C4D;
+}/*# sourceMappingURL=account.component.css.map */

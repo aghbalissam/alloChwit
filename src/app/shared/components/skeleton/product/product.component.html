@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="d-flex col-6 mb-3 flex-column" *ngFor="let i of [].constructor(count)"> 
+            <div>
+                <ngx-skeleton-loader [theme]="{
+                    height : '20px',
+                    'border-radius' : '5px'}">
+                </ngx-skeleton-loader>
+            </div> 
+            <div class="">
+                <ngx-skeleton-loader [theme]="{
+                    height : '20px',
+                    width : '93%',
+                    'border-radius' : '5px'}"
+                    class="me-1">
+                </ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{
+                    height : '20px',
+                    width : '20px',
+                    'border-radius' : '20px'}">
+                </ngx-skeleton-loader> 
+            </div>
+        </div>
+    </div>
+</div>

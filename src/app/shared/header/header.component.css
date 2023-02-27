@@ -1,0 +1,25 @@
+.allochwit-header {
+  height: 4.5rem !important;
+}
+.allochwit-header .col.header-part1 img {
+  height: 4rem;
+}
+.allochwit-header .col.header-part2 #search-header {
+  border-radius: 30px;
+}
+.allochwit-header .col.header-part3 > div {
+  height: 50px;
+  width: 50px;
+  background-color: #EBB03B;
+  border-radius: 100%;
+  position: relative;
+}
+.allochwit-header .col.header-part3 > div .account-sub-menu {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 2px 24px 5px rgba(0, 0, 0, 0.06);
+}/*# sourceMappingURL=header.component.css.map */

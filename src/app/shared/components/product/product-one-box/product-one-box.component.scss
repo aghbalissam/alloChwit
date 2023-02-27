@@ -1,0 +1,18 @@
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+.productWith
+{
+    height: 65vh;
+    overflow-y: scroll;
+    button
+    {
+        border: 1px solid #dedede;
+        width: 100%;
+        text-align: left;
+        span
+        {
+            float: right;
+        }
+    }
+}

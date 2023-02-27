@@ -1,0 +1,111 @@
+$primary-color:#192C4D;
+$secondary-color:#EBB03B;
+
+#footer
+{
+    background-color: $secondary-color;
+
+    .col.infos
+    {
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        padding: 0px;
+        overflow: hidden;
+
+        .infos-image
+        {
+            max-height: 180px;
+            img
+            {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .infos-content
+        {
+            h5
+            {
+                font-size: 35px;
+                font-weight: 700;
+            }
+
+            p
+            {
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+
+        .phone-icon
+        {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 80px;
+            width: 80px;
+            border-radius: 100%;
+            border: 3px solid $primary-color;
+            background-color: white;
+            i
+            {
+                font-size: 30px;
+            }
+        }
+    }
+
+
+    .col.logo
+    {
+        img
+        {
+            height: 150px;
+        }
+    }
+
+    .col.social-media
+    {
+        a
+        {
+            color: white;
+            height: 45px;
+            width: 45px;
+            border-radius: 100%;
+
+            i
+            {
+                font-size: 22px;
+            }
+
+            &.instagram
+            {
+                background: linear-gradient(29.61deg, #f38334 0%, #da2e7d 50.39%, #6b54c6 100%);
+            }
+
+            &.facebook
+            {
+                background: #1877f2;
+            }
+
+            &.twitter
+            {
+                background: #55acee;
+            }
+
+            &.youtube
+            {
+                background: #b00;
+            }
+        }
+    }
+
+    .col.copyright
+    {
+        border-top: 1px solid $primary-color;
+    }
+}
